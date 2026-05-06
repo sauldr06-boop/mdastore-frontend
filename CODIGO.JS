@@ -730,7 +730,7 @@ function handleContactSubmit(e) {
   }, 800);
 
   console.log(
-    "%c NEXUS GAMING 🎮 ",
+    "%c MDAStore GAMING 🎮 ",
     "background: #00f5ff; color: #050508; font-size: 16px; font-weight: bold; padding: 8px 16px; border-radius: 4px;"
   );
   console.log(
