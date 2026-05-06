@@ -676,7 +676,7 @@ function handleContactSubmit(e) {
   // Modal
   modalCloseBtn.addEventListener("click", () => {
     confirmModal.classList.remove("open");
-    showToast("🎉 ¡Gracias por tu compra en NexusGaming!");
+    showToast("🎉 ¡Gracias por tu compra en MDAStore Gaming!");
   });
   confirmModal.addEventListener("click", (e) => {
     if (e.target === confirmModal) confirmModal.classList.remove("open");
