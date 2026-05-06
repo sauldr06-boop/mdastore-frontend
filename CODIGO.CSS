@@ -1659,3 +1659,50 @@ button { cursor: pointer; border: none; background: none; }
 .auth-panel .modal-text {
   color: #a0a0c0 !important;
 }
+/* ─── FIXES MÓVIL ──────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Asegurar que la navbar es visible */
+  .site-header {
+    display: block !important;
+  }
+
+  .navbar {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+
+  /* Mostrar hamburguesa */
+  .hamburger {
+    display: flex !important;
+  }
+
+  /* Mostrar carrito */
+  .cart-btn {
+    display: flex !important;
+  }
+
+  /* Mostrar botón auth */
+  .btn-auth {
+    display: flex !important;
+    padding: 8px !important;
+  }
+
+  /* Ocultar texto del botón auth en móvil */
+  .btn-auth span {
+    display: none !important;
+  }
+
+  /* Nav actions */
+  .nav-actions {
+    display: flex !important;
+    gap: 8px;
+  }
+
+  /* Panel carrito ocupa toda la pantalla */
+  .cart-drawer {
+    width: 100% !important;
+  }
+}
