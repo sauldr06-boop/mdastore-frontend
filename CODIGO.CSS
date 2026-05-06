@@ -1785,3 +1785,38 @@ button { cursor: pointer; border: none; background: none; }
     border-color: rgba(255,255,255,0.3) !important;
   }
 }
+/* ─── FIX NAVBAR MÓVIL COMPLETO ─────────────────────── */
+@media (max-width: 768px) {
+
+  .navbar {
+    height: auto !important;
+    flex-wrap: wrap !important;
+    padding: 10px 16px !important;
+    gap: 10px !important;
+  }
+
+  .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .auth-btn-wrapper {
+    position: static !important;
+  }
+
+  .user-menu {
+    position: fixed !important;
+    top: 70px !important;
+    right: 10px !important;
+    left: 10px !important;
+    width: auto !important;
+    z-index: 9999 !important;
+  }
+
+  .cart-drawer {
+    width: 100vw !important;
+    max-width: 100% !important;
+  }
+}
