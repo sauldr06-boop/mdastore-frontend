@@ -1484,6 +1484,34 @@ button { cursor: pointer; border: none; background: none; }
 
 /* Mobile */
 @media (max-width: 768px) {
+  /* Carrito visible en móvil */
+  .cart-btn {
+    display: flex;
+    position: relative;
+  }
+
+  .cart-count {
+    display: flex;
+  }
+
+  /* Auth botón en móvil */
+  .btn-auth {
+    padding: 8px;
+  }
+
+  .btn-auth span {
+    display: none;
+  }
+
+  /* Nav actions en móvil */
+  .nav-actions {
+    gap: 8px;
+  }
+
+  /* Drawer carrito ocupa toda la pantalla */
+  .cart-drawer {
+    width: 100%;
+  }
   /* Navbar */
   .nav-links {
     position: fixed;
