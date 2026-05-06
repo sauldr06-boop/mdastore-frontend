@@ -1706,3 +1706,38 @@ button { cursor: pointer; border: none; background: none; }
     width: 100% !important;
   }
 }
+.user-menu-item {
+  color: #ffffff !important;
+}
+
+.user-menu-item.danger {
+  color: #ff6b6b !important;
+}
+/* ─── MENÚ USUARIO ──────────────────────────────────── */
+.user-menu {
+  background: #1a1a2e;
+  border: 1px solid rgba(0,245,255,0.2);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.user-menu-name {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.user-menu-email {
+  color: #a0a0c0;
+}
+
+.user-menu-item {
+  color: #ffffff !important;
+}
+
+.user-menu-item.danger {
+  color: #ff6b6b !important;
+}
+
+.user-menu-divider {
+  border-color: rgba(255,255,255,0.1);
+}
