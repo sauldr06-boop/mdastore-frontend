@@ -1741,3 +1741,47 @@ button { cursor: pointer; border: none; background: none; }
 .user-menu-divider {
   border-color: rgba(255,255,255,0.1);
 }
+/* ─── FIX NAVBAR MÓVIL ──────────────────────────────── */
+@media (max-width: 768px) {
+
+  .site-header {
+    background: #0a0a18 !important;
+    border-bottom: 1px solid rgba(0,245,255,0.3) !important;
+  }
+
+  .navbar {
+    height: 60px !important;
+  }
+
+  .logo-text {
+    color: #ffffff !important;
+    font-size: 0.9rem !important;
+  }
+
+  .logo-icon {
+    color: #00f5ff !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+
+  .hamburger span {
+    background: #ffffff !important;
+  }
+
+  .cart-btn {
+    display: flex !important;
+    color: #ffffff !important;
+  }
+
+  .cart-count {
+    display: flex !important;
+  }
+
+  .btn-auth {
+    display: flex !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,0.3) !important;
+  }
+}
