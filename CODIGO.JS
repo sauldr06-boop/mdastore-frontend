@@ -485,28 +485,6 @@ function createCartItem(item) {
   return div;
 }
 
-/* =====================================================
-   3. FINALIZAR COMPRA
-   ===================================================== */
-
-function checkout() {
-  if (cart.length === 0) return;
-
-  const orderId  = "NX-" + Math.random().toString(36).substr(2, 8).toUpperCase();
-  const subtotal = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-  const shipping  = subtotal >= 50 ? 0 : 4.99;
-  const total     = subtotal + shipping;
-
-  orderNumber.textContent = orderId;
-  modalTotal.textContent  = formatPrice(total);
-
-  closeCart();
-  confirmModal.classList.add("open");
-
-  cart = [];
-  updateCartUI();
-  PRODUCTS.forEach((p) => updateCardButton(p.id, false));
-}
 
 /* =====================================================
    4. FILTROS Y BÚSQUEDA
