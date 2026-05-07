@@ -878,30 +878,41 @@ async function handleRegister(e) {
 
 async function checkout() {
   if (cart.length === 0) return;
+
   if (!getUser()) {
     showToast("⚠️ Debes iniciar sesión para finalizar tu compra.");
     closeCart();
     openAuthModal("login");
     return;
   }
+
   checkoutBtn.disabled = true;
   checkoutBtn.textContent = "Procesando… ⏳";
+
   try {
-    const items = cart.map((item) => ({ productId: item.id, qty: item.qty }));
-    const data  = await apiRequest("/orders", {
+    // Construir items para Stripe
+    const items = cart.map((item) => ({
+      productId: item.id,
+      name:      item.name,
+      image:     item.image,
+      price:     item.price,
+      qty:       item.qty,
+    }));
+
+    // Crear sesión de pago en Stripe
+    const data = await apiRequest("/payment/create-session", {
       method: "POST",
       body:   JSON.stringify({ items }),
     });
-    if (!data.success) { showToast(`❌ ${data.message}`); return; }
-    const order = data.order;
-    orderNumber.textContent = order.id;
-    modalTotal.textContent  = formatPrice(order.total);
-    closeCart();
-    confirmModal.classList.add("open");
-    cart = [];
-    updateCartUI();
-    PRODUCTS.forEach((p) => updateCardButton(p.id, false));
-    showToast(`📧 Email de confirmación enviado a ${getUser().email}`);
+
+    if (!data.success) {
+      showToast(`❌ ${data.message}`);
+      return;
+    }
+
+    // Redirigir a Stripe Checkout
+    window.location.href = data.url;
+
   } catch (err) {
     showToast("❌ Error al conectar con el servidor.");
   } finally {
